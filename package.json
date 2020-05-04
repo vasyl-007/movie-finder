@@ -1,20 +1,19 @@
 {
-  "name": "filmoteka",
+  "name": "moviefinder",
   "version": "1.0.0",
-  "description": "",
+  "description": "moviefinder",
   "main": "index.js",
   "scripts": {
     "start": "cross-env PORT=1234 gulp start --development ",
     "build": "gulp build --production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "netlify deploy -p"
   },
-  "homepage": "https://a-sapon.github.io/filmoteka",
   "repository": {
     "type": "git",
-    "url": "git+https://a-sapon.github.io/filmoteka"
+    "url": "git+https://vasyl-007.github.io/movie-finder"
   },
-  "author": "Anna Sapon <sapon.anya@gmail.com>",
+  "author": "Vasyl Manyo <vasyl.manyo@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.0",
