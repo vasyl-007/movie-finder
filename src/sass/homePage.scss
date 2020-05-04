@@ -1,0 +1,217 @@
+.home-page {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.6),
+    rgba(233, 211, 134, 0.534)),
+    url(../images/background.jpg);
+}
+
+@keyframes MOVE-BG {
+  from {
+    transform: translateX(0);
+  }
+
+  to { 
+    transform: translateX(-187%);
+  }
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 24px 0px;
+  box-shadow: 0px 5px 9px 1px rgba(0, 0, 0, 0.23);
+}
+
+input[name='search'] {
+  background-image: url(../images/search-icon.png);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 6px;
+  background-repeat: no-repeat;
+  background-position: 7% 50%;
+  width: 270px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 28px;
+  padding-left: 28px;
+  border: none;
+  border-radius: 0 50px;
+  text-align: center;
+
+  &::placeholder {
+    color: #ffffff;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (min-width: 768px) {
+    background-position: 10% 50%;
+    font-size: 17px;
+    width: 360px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding-bottom: 23px;
+
+  &_btn {
+    width: 94px;
+    height: 46px;
+    background-color: #2e2d2d;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    @media (min-width: 768px) {
+      width: 74px;
+      height: 36px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 1px 8px 3px rgba(124, 124, 124, 0.6);
+    }
+    
+    &:disabled {
+      opacity: 0.7;
+    }
+  }
+
+  &_page {
+    width: 46px;
+    height: 46px;
+    background-color: #2e2d2d;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 16px 0 16px;
+
+    @media (min-width: 768px) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.films_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 0px 28px 0px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 0px 20px 0px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 30px 0px 15px 0px;
+  }
+
+  &-item {
+    width: 298px;
+    height: 156px;
+    position: relative;
+    margin-bottom: 11px;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 16px;
+
+      &:nth-last-of-type(-n + 2) {
+        margin-bottom: 0;
+      }
+
+      &:nth-child(odd) {
+        margin-right: 23px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      width: 466px;
+      height: 244px;
+
+      &:nth-child(odd) {
+        margin-right: 30px;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      box-shadow: inset 0px -200px 97px -117px rgba(0, 0, 0, 0.52);
+      border-radius: 10px;
+    }
+
+    &-image {
+      width: 298px;
+      height: 156px;
+      border-radius: 10px;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        max-width: 100%;
+        max-height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(../images/default-movie-img.jpg);
+        border-radius: 10px;
+      }
+
+      @media (min-width: 1024px) {
+        width: 466px;
+        height: 244px;
+      }
+    }
+
+    &-title {
+      font-size: 12.3px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.2;
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+    }
+  }
+}
+
+.error {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #ff0000;
+  margin-bottom: 36px;
+}
